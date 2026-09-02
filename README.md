@@ -4,6 +4,21 @@ Programador de apagado automático para CachyOS / Omarchy usando **systemd user 
 
 Ejecuta `systemctl poweroff` de forma limpia en el momento programado.
 
+## Capturas
+
+### Menú principal
+
+![Menú principal — Alarma de Apagado](docs/screenshots/menu-principal.png)
+
+### Elegir fecha y hora
+
+![Selector de fecha y hora](docs/screenshots/fecha-hora.png)
+
+Controles del selector:
+- **↑ / ↓** — cambiar el valor del campo activo
+- **← / →** — cambiar de campo (año, mes, día, hora, minuto)
+- **Tab** — ir a los botones Programar / Volver
+
 ## Requisitos
 
 - CachyOS / Linux con systemd
@@ -14,7 +29,7 @@ Ejecuta `systemctl poweroff` de forma limpia en el momento programado.
 ## Instalación
 
 ```bash
-cd ~/Projects/powerDesktop
+cd ~/D-SSD/personal/projects/powerDesktop
 chmod +x install.sh uninstall.sh
 ./install.sh
 ```
@@ -92,7 +107,7 @@ systemctl --user disable --now power-scheduler-shutdown.timer
 ## Desinstalar
 
 ```bash
-cd ~/Projects/powerDesktop
+cd ~/D-SSD/personal/projects/powerDesktop
 ./uninstall.sh
 rm -rf .venv   # opcional: eliminar entorno virtual
 ```
@@ -100,13 +115,15 @@ rm -rf .venv   # opcional: eliminar entorno virtual
 Opcional: borrar el directorio del proyecto.
 
 ```bash
-rm -rf ~/Projects/powerDesktop
+rm -rf ~/D-SSD/personal/projects/powerDesktop
 ```
 
 ## Estructura
 
 ```
 powerDesktop/
+├── docs/
+│   └── screenshots/  # Capturas para el README
 ├── main.py           # Entry point y chequeo de dependencias
 ├── systemd.py        # Creación/gestión de timers systemd
 ├── tui.py            # Interfaz Textual
